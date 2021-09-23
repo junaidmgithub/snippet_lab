@@ -35,5 +35,5 @@ def chunk_data(data, chunk_size=2):
 
 # Test
 d = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
-for i in chunk_data(d, 3):
-    print(i)
+for n in range(1, 11):
+    print(f"Chunk size:{n} |", *(i for i in chunk_data(d, n)))
