@@ -33,12 +33,26 @@ def chunk_data(data, chunk_size=2):
     if ret:
         yield ret
 
-# Test
-d = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
-for n in range(1, 11):
-    print(f"Chunk size:{n} |", *(i for i in chunk_data(d, n)))
-
+        
 # Method 2 (yield data not supported)
 def chunk_data2(iterable, chunk_size=500):
     return list(iterable[j:j + chunk_size]
     for j in range(0, len(iterable), chunk_size))
+
+
+# Test
+d = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+for n in range(1, 11):
+    print(f"Chunk size:{n} |", *(i for i in chunk_data(d, n)))
+    
+# Test 2
+def get_data():
+    d = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+    for i in d:
+        yield {'data': i}
+
+for n in range(1, 11):
+    print(f"Chunk size:{n} |", *(i for i in chunk_data(get_data(), n)))
+
+
+
