@@ -37,7 +37,7 @@ def download_html(url):
     urllib.request.urlretrieve(url, f"{page_no}.html")
 
 
-tpw = ThreadPoolWorker(max_workers=38)
+tpw = ThreadPoolWorker(max_workers=6)
 tpw.map(download_html, URLS)
 tpw.show_progress()
 
