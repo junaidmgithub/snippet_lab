@@ -7,6 +7,7 @@ def dynamic_property(instance_name, name):
         setattr(obj, name, value)
     return property(_get, _set)
 
+# // To use the descriptor, it must be defined as a class variable
 class DynamicProperty:
 
     def __init__(self, instance_name, attr_name):
