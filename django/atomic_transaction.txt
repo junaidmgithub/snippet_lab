@@ -1,0 +1,14 @@
+If you need to wrap all API calls and DRF actions into transactions
+you can use (ATOMIC_REQUEST) Django database settings [from Django 1.8]
+
+DATABASES = {
+    "default": {
+        ....
+        "ATOMIC_REQUESTS": True,
+        ....
+    }
+}
+
+Ref - 
+      https://docs.djangoproject.com/en/3.2/topics/db/transactions/
+      https://stackoverflow.com/questions/52715005/atomic-transactions-in-drf-action
