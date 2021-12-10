@@ -1,7 +1,5 @@
 class Connections:
 
-    connection = None
-
     def __init__(self, **configs):
         self.connections = {}
         self.configs = configs
