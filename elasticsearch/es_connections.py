@@ -11,10 +11,10 @@ class Connections:
             return self.connections[alias]
         except KeyError:
             pass
-        return self.create_connection(alias)
+        return self.create_connection(alias, **self.configs[alias])
 
-    def create_connection(self, alias="default"):
-        self.connections[alias] = dict(**self.configs[alias])
+    def create_connection(self, alias="default", **kwargs):
+        self.connections[alias] = dict(**kwargs) # // change stub here
         return self.connections[alias]
 
     def add_connection(self, alias, conn):
@@ -29,6 +29,7 @@ connections = Connections(default={'host':'127.0.0.1', 'port': 5600},
                           qa={})
 configure = connections.configure
 add_connection = connections.add_connection
+create_connection = connections.create_connection
 get_connection = connections.get_connection
 
 
