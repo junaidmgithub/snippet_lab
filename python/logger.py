@@ -1,6 +1,26 @@
 import sys
 import logging
 
+formatter = logging.Formatter('%(name)s:%(asctime)s:%(levelname)s:%(message)s')
+file_handler = logging.FileHandler('%s.log' % __name__)
+file_handler.setFormatter(formatter)
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+logger.addHandler(file_handler)
+
+# Usage
+logger.debug("debug")
+logger.info("info")
+logger.warning("warning")
+logger.error("error")
+logger.critical("critical")
+
+
+# Ref - https://docs.python.org/3/library/logging.html
+#     - https://www.youtube.com/watch?v=jxmzY9soFXg
+######################################################
+
+# Custom 
 
 class Logger(object):
 
