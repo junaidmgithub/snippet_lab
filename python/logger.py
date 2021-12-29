@@ -4,17 +4,19 @@ import logging
 formatter = logging.Formatter('%(name)s:%(asctime)s:%(levelname)s:%(message)s')
 file_handler = logging.FileHandler('%s.log' % __name__)
 file_handler.setFormatter(formatter)
+stream_handler = logging.StreamHandler()
+stream_handler.setFormatter(formatter)
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 logger.addHandler(file_handler)
+logger.addHandler(stream_handler)
 
-# Usage
 logger.debug("debug")
 logger.info("info")
 logger.warning("warning")
 logger.error("error")
 logger.critical("critical")
-
+logger.exception("Exception")
 
 # Ref - https://docs.python.org/3/library/logging.html
 #     - https://www.youtube.com/watch?v=jxmzY9soFXg
