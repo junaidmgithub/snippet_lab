@@ -1,5 +1,6 @@
 # This program is python version of code taken from https://github.com/kashish-jain/Tambola/blob/master/frontend/src/utils/utils.tsx
-
+# Tambola Ticket Generation 
+# 
 import math
 import random
 import json
