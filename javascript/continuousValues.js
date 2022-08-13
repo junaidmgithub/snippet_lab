@@ -37,10 +37,10 @@ let all_colours = ['#FB8072', '#80B1D3', '#ee9c00',
 
 function test(){
 
-    let rc = new ContinousValues(values=all_colours);
+    let cv = new ContinousValues(values=all_colours);
     
     for (var i=0; i<100;i++){
-        console.log(rc.getValue());
+        console.log(cv.getValue());
     }
 }
 
