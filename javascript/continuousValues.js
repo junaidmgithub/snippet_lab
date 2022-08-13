@@ -1,7 +1,7 @@
 class ContinousValues {
     
     constructor(values) {
-        if (! values) throw("values argument is required");
+        if (! values) throw new Error('`values` argument is required');
         this.values = values;
         this.currentValue = null;
         this.currentValueIndex = 0;
@@ -22,6 +22,7 @@ class ContinousValues {
 
 }
 
+// Usage 
 
 let all_colours = ['#FB8072', '#80B1D3', '#ee9c00',
 '#58D68D', '#6e8bce', '#A9F1DF', '#FFECD2',
