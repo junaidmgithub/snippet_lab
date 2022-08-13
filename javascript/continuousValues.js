@@ -7,7 +7,7 @@ class ContinousValues {
         this.valuesMaxIndex = this.values.length - 1;
     }
 
-    getColor() {
+    getValue() {
         if (this.currentValueIndex == 0) {
             this.currentValue = this.values[this.currentValueIndex];
             this.currentValueIndex++;  
@@ -42,8 +42,8 @@ function test(){
 
     let rc = new ContinousValues(values=all_colours);
     
-    for (var i=0; i<200;i++){
-        console.log(rc.getColor());
+    for (var i=0; i<60;i++){
+        console.log(rc.getValue());
     }
 }
 
