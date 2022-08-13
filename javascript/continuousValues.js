@@ -1,25 +1,21 @@
 class ContinousValues {
     
     constructor(values) {
+        if (! values) throw("values argument is required");
+        this.values = values;
         this.currentValue = null;
         this.currentValueIndex = 0;
-        this.values = values;
         this.valuesMaxIndex = this.values.length - 1;
     }
 
     getValue() {
-        if (this.currentValueIndex == 0) {
+        if (this.currentValueIndex <= this.valuesMaxIndex) {
             this.currentValue = this.values[this.currentValueIndex];
-            this.currentValueIndex++;  
+            this.currentValueIndex++; 
         } else {
-            if (this.currentValueIndex <= this.valuesMaxIndex) {
-                this.currentValue = this.values[this.currentValueIndex];
-                this.currentValueIndex++; 
-            } else {
-                this.currentValueIndex = 0;
-                this.currentValue = this.values[this.currentValueIndex];
-                this.currentValueIndex++;
-            }
+            this.currentValueIndex = 0;
+            this.currentValue = this.values[this.currentValueIndex];
+            this.currentValueIndex++;
         }
         return this.currentValue;
     }
@@ -42,7 +38,7 @@ function test(){
 
     let rc = new ContinousValues(values=all_colours);
     
-    for (var i=0; i<60;i++){
+    for (var i=0; i<100;i++){
         console.log(rc.getValue());
     }
 }
