@@ -46,7 +46,7 @@ def calculate_new_regime_tax(dblTaxableAmount):
             dblSlabAmount = dblTaxableAmount - 250000
             dblTaxAmount += (dblSlabAmount * 5) / 100
         pass
-    print("1 :",dblTaxAmount)
+
     # Slab 2 (10%)
     if dblTaxableAmount >= 500001:
         if dblTaxableAmount >= 750000:
@@ -55,7 +55,7 @@ def calculate_new_regime_tax(dblTaxableAmount):
             dblSlabAmount = dblTaxableAmount - 500000
             dblTaxAmount += (dblSlabAmount * 10) / 100
         pass
-    print("2 :", dblTaxAmount)
+
     # Slab 3 (15%)
     if dblTaxableAmount >= 750001:
         if dblTaxableAmount >= 1000000:
@@ -73,7 +73,7 @@ def calculate_new_regime_tax(dblTaxableAmount):
             dblSlabAmount = dblTaxableAmount - 1000000
             dblTaxAmount += (dblSlabAmount * 20) / 100
         pass
-    print("4 :", dblTaxAmount)
+
     # Slab 5 (25%)
     if dblTaxableAmount >= 1250001:
         if dblTaxableAmount >= 1500000:
@@ -82,13 +82,13 @@ def calculate_new_regime_tax(dblTaxableAmount):
             dblSlabAmount = dblTaxableAmount - 1250000
             dblTaxAmount += (dblSlabAmount * 25) / 100
         pass
-    print("5 :", dblTaxAmount)
+   
     # Slab 6 (30%)
     if dblTaxableAmount >= 1500001:
         dblSlabAmount = dblTaxableAmount - 1500000
         dblTaxAmount += (dblSlabAmount * 30) / 100
         pass
-    print("6 :", dblTaxAmount)
+  
     # Cess (4% of total tax)
     dblTaxAmount += ((dblTaxAmount * 4) / 100)
 
