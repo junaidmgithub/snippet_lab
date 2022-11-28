@@ -64,7 +64,7 @@ def calculate_new_regime_tax(dblTaxableAmount):
             dblSlabAmount = dblTaxableAmount - 750000
             dblTaxAmount += (dblSlabAmount * 15) / 100
         pass
-    print("3 :", dblTaxAmount)
+ 
     # Slab 4 (20%)
     if dblTaxableAmount >= 1000001:
         if dblTaxableAmount >= 1250000:
